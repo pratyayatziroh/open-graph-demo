@@ -5,8 +5,9 @@ import io.vertx.core.Future;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.Json;
 import io.vertx.ext.web.client.WebClient;
+import io.vertx.ext.web.client.WebClientOptions;
 import org.jsoup.Jsoup;
-import java.io.IOException;
+import org.jsoup.nodes.Document;
 import java.util.HashMap;
 
 /**
@@ -14,45 +15,41 @@ import java.util.HashMap;
  */
 
 public class OpenGraphServiceImpl implements OpenGraphService{
-    private final WebClient client = WebClient.create(Vertx.vertx());
+    private final WebClientOptions webClientOptions;
+
+    public OpenGraphServiceImpl(){
+        webClientOptions = new WebClientOptions();
+        webClientOptions.setUserAgent("PostmanRuntime/7.30.0");
+        webClientOptions.setKeepAlive(true);
+    }
+
     @Override
-    public Future<Void> fetchMetadata(String url) {
+    public Future<String> fetchMetadata(String url) {
         return Future.future(promise->{
+             final WebClient client = WebClient.create(Vertx.vertx(), webClientOptions);
+            var ogData = new HashMap<String, String>();
             client
                     .getAbs(url)
                     .send()
-                    .compose(bufferResponse->{
-                       var bodyAsString = bufferResponse.bodyAsString();
-                       System.out.println(bodyAsString);
-                       return Future.succeededFuture();
-                    });
-        });
-    }
-
-    public Future<Void> parseMeta(String url){
-        return Future.future(promise->{
-            var ogData = new HashMap<String, String>();
-            try {
-                var document = Jsoup.connect(url).get();
-                var elements = document.select("meta");
-                if(elements.isEmpty()) {
-                    promise.complete();
-                }
-                else{
-                    for (var element : elements) {
-                        var attributes = element.attributes();
-                        if (OpenGraphMetaDataProperties.isValidProperty(attributes.get("property"))) {
-                            ogData.put(attributes.get("property"), attributes.get("content"));
+                    .onSuccess(bufferResponse->{
+                        var bodyAsString = bufferResponse.bodyAsString();
+                        Document document = Jsoup.parse(bodyAsString);
+                        var head = document.select("head").first();
+                        var childElements =  head.children();
+                        if(childElements.isEmpty()) {
+                            promise.complete();
                         }
-                    }
-                    var metadataJson = Json.encode(ogData);
-                    System.out.println(metadataJson);
-                    promise.complete();
-                }
-            }
-            catch (IOException e){
-                throw new RuntimeException("Could not fetch contents of the URL");
-            }
+                        else{
+                            for (var element : childElements) {
+                                var attributes = element.attributes();
+                                if (OpenGraphMetaDataProperties.isValidProperty(attributes.get("property"))) {
+                                    ogData.put(attributes.get("property"), attributes.get("content"));
+                                }
+                            }
+                            var metadataJson = Json.encode(ogData);
+                            promise.complete(metadataJson);
+                        }
+                    });
         });
     }
 }

@@ -13,27 +13,17 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 class OpenGraphServiceImplTest {
     private final OpenGraphServiceImpl openGraphService;
-    OpenGraphServiceImplTest(){
+    OpenGraphServiceImplTest() {
         openGraphService = new OpenGraphServiceImpl();
     }
 
     @Test
-    void checkBodyAsString(VertxTestContext context){
-        final var url = "https://www.outlook.com";
+    void checkBodyAsString(VertxTestContext context) {
+        final var url = "https://www.samsung.com";
         openGraphService
                 .fetchMetadata(url)
-                .onComplete(context.succeeding(buffer->{
-                    context.verify(context::completeNow);
-        }));
-    }
-
-    @Test
-    void parse(VertxTestContext context){
-        final var url = "https://www.twitter.com";
-        openGraphService
-                .parseMeta(url)
-                .onComplete(context.succeeding(buffer->{
-                    context.verify(()->{
+                .onComplete(context.succeeding(buffer -> {
+                    context.verify(() -> {
                         System.out.println(buffer);
                         context.completeNow();
                     });
