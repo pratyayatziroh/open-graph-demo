@@ -16,6 +16,9 @@ dependencies {
     implementation group: 'io.vertx', name: 'vertx-web-client', version: '4.3.7'
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.26'
     implementation group: 'org.jsoup', name: 'jsoup', version: '1.15.3'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.14.2'
+    testImplementation group: 'io.vertx', name: 'vertx-junit5', version: '4.3.7'
+    implementation group: 'org.jsoup', name: 'jsoup', version: '1.15.3'
 }
 
 test {

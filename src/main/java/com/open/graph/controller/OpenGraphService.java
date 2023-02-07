@@ -8,5 +8,5 @@ import io.vertx.core.Future;
  */
 
 public interface OpenGraphService {
-    public Future<OpenGraphMetaData> fetchMetadata(String url);
+    public Future<Void> fetchMetadata(String url);
 }
