@@ -26,7 +26,7 @@ public class OpenGraphServiceImpl implements OpenGraphService{
     @Override
     public Future<String> fetchMetadata(String url) {
         return Future.future(promise->{
-             final WebClient client = WebClient.create(Vertx.vertx(), webClientOptions);
+            final WebClient client = WebClient.create(Vertx.vertx(), webClientOptions);
             var ogData = new HashMap<String, String>();
             client
                     .getAbs(url)
@@ -39,6 +39,7 @@ public class OpenGraphServiceImpl implements OpenGraphService{
                         if(childElements.isEmpty()) {
                             promise.complete();
                         }
+
                         else{
                             for (var element : childElements) {
                                 var attributes = element.attributes();

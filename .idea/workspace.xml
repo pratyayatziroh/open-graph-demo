@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04ed57da-d670-4458-92dc-e82d632f97fd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/open/graph/controller/HeadMetaDataServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/open/graph/controller/OKHttpMetadata.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/open/graph/controller/HeadMetaDataServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/open/graph/controller/OpenGraphService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/open/graph/controller/OpenGraphService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/open/graph/controller/OpenGraphServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/open/graph/controller/OpenGraphServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/open/graph/controller/OpenGraphServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/open/graph/controller/OpenGraphServiceImplTest.java" afterDir="false" />
     </list>
@@ -44,7 +47,53 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.OpenGraphServiceImplTest.checkBodyAsString">
+  <component name="RunManager" selected="Gradle.OkHttpMetadataTest.getData">
+    <configuration name="HeadMetaDataServiceImplTest.getData" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.open.graph.controller.HeadMetaDataServiceImplTest.getData&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="OkHttpMetadataTest.getData" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.open.graph.controller.OkHttpMetadataTest.getData&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="OpenGraphServiceImplTest.checkBodyAsString" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -93,6 +142,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.OkHttpMetadataTest.getData" />
+        <item itemvalue="Gradle.HeadMetaDataServiceImplTest.getData" />
         <item itemvalue="Gradle.OpenGraphServiceImplTest.checkBodyAsString" />
         <item itemvalue="Gradle.OpenGraphServiceImplTest.parse" />
       </list>
@@ -116,6 +167,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/open/graph/controller/OpenGraphServiceImpl.java</url>
           <line>35</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/open/graph/controller/HeadMetaDataServiceImpl.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -19,7 +19,7 @@ class OpenGraphServiceImplTest {
 
     @Test
     void checkBodyAsString(VertxTestContext context) {
-        final var url = "https://www.samsung.com";
+        final var url = "https://amazon.com";
         openGraphService
                 .fetchMetadata(url)
                 .onComplete(context.succeeding(buffer -> {
