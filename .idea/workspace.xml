@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04ed57da-d670-4458-92dc-e82d632f97fd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/open/graph/controller/HeadMetaDataServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/open/graph/controller/OKHttpMetadata.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/open/graph/controller/HeadMetaDataServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/open/graph/controller/OpenGraphServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/open/graph/controller/OpenGraphServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/open/graph/controller/OKHttpMetadata.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/open/graph/controller/OKHttpMetadata.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/open/graph/controller/OkHttpMetadataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/open/graph/controller/OkHttpMetadataTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/open/graph/controller/OpenGraphServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/open/graph/controller/OpenGraphServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -143,8 +140,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.OkHttpMetadataTest.getData" />
-        <item itemvalue="Gradle.HeadMetaDataServiceImplTest.getData" />
         <item itemvalue="Gradle.OpenGraphServiceImplTest.checkBodyAsString" />
+        <item itemvalue="Gradle.HeadMetaDataServiceImplTest.getData" />
         <item itemvalue="Gradle.OpenGraphServiceImplTest.parse" />
       </list>
     </recent_temporary>
